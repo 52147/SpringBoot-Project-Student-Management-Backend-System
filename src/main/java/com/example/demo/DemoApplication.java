@@ -12,8 +12,7 @@ package com.example.demo;
 
 
 
-// Spring boot is framework to build the full stack or back end application.
-// We have the log tomcats started on 48080 right here which means we have a web server up and running(http 8080)‎
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

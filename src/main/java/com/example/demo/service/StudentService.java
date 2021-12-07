@@ -28,7 +28,6 @@ public class StudentService {
 	@Autowired 
 	// This student service should be auto wired for us, so studentDao will be instantiated for us and then inject into the constructor and method
 	public StudentService(@Qualifier("fakeStudentDao")StudentDao studentDao) {
-
 		this.studentDao = studentDao;
 	}
 

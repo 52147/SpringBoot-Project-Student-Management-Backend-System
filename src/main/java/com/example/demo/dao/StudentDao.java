@@ -6,6 +6,12 @@ import java.util.UUID;
 
 import com.example.demo.model.Student;
 
+/**
+ * 
+ * Data access object(dao): it's a object or interface, which is used to access data from database.
+ *
+ */
+
 public interface StudentDao {
 
 	Optional<Student> selectStudentById(UUID id);

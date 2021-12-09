@@ -1,4 +1,5 @@
 package com.example.demo.controller;
+
 /**
  * = Api layer =
  * 
@@ -7,9 +8,14 @@ package com.example.demo.controller;
  *  - implement an api that get json object back.  
  *  
  *  - Dependency injection :
- *    - Use notation can split things into the service layer and API layer.
- *    - The API layer talking successfully to the service layer and the service layer is giving some data back to the API layer.
  *  
+ *    - Use notation can split things into the service layer and API layer.
+ *    - The API laer talking successfully to the service layer 
+ *      and the service layer is giving some data back to the API layer.
+ *    
+ *  @RestController // The notation make this class to serve the restful endpoints
+ *	@Autowired // add the service notation in the studentService class to tell this controller where to find the student service
+ *
  */
 
 import java.util.List;
@@ -27,24 +33,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-@RestController // The notation make this class to serve the restful endpoints
+@RestController
 @RequestMapping("api/student")
 public class StudentController {
 	private StudentService studentService;
 
-	@Autowired // add the service notation in the studentService class to tell this controller where to find the student service
+	@Autowired // auto wired the student service
 	public StudentController(StudentService studentService) {
-		
+
 		this.studentService = studentService;
 	}
 
-	@GetMapping
+	@GetMapping // mapping the http get request
 	public List<Student> getAllStudents() {
 		return studentService.getAllStudents();
 	}
 
-	@PostMapping
+	@PostMapping // mapping the http post request
 	public String addStudent(@RequestBody Student student) {
 		studentService.addStudent(student);
 
@@ -57,13 +62,12 @@ public class StudentController {
 
 		return "Updated student!";
 	}
-	
+
 	@DeleteMapping(path = "{id}")
 	// localhost: 8080/api/student/12345
 	public String deleteStudent(@PathVariable("id") UUID id) {
 		studentService.deleteStudent(id);
 		return "Deleted student";
 	}
-	
 
 }

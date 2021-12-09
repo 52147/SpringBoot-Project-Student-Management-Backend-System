@@ -7,14 +7,13 @@ package com.example.demo.controller;
  * 
  *  - implement an api that get json object back.  
  *  
- *  - Dependency injection :
- *  
- *    - Use notation can split things into the service layer and API layer.
- *    - The API laer talking successfully to the service layer 
- *      and the service layer is giving some data back to the API layer.
  *    
  *  @RestController // The notation make this class to serve the restful endpoints
- *	@Autowired // add the service notation in the studentService class to tell this controller where to find the student service
+ *	@Autowired // add the service notation in the studentService class 
+ *                to tell this controller where to find the student service
+ *                
+ *                
+ *  Postman: is an application used for API testing. It is an HTTP client that tests HTTP requests.              
  *
  */
 
@@ -38,7 +37,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentController {
 	private StudentService studentService;
 
-	@Autowired // auto wired the student service
+	@Autowired // auto wired the student service, to tell this controller where to find the student service
 	public StudentController(StudentService studentService) {
 
 		this.studentService = studentService;
@@ -64,7 +63,7 @@ public class StudentController {
 	}
 
 	@DeleteMapping(path = "{id}")
-	// localhost: 8080/api/student/12345
+	// localhost: 8080/api/student/12345(12345->id)
 	public String deleteStudent(@PathVariable("id") UUID id) {
 		studentService.deleteStudent(id);
 		return "Deleted student";

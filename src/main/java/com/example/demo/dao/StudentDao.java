@@ -6,10 +6,18 @@ import java.util.UUID;
 
 import com.example.demo.model.Student;
 
+
+
 /**
  * 
  * Data access object(dao): it's a object or interface, which is used to access data from database.
  *
+ *
+ * Optional class: The Optional class provides APIs for returning the value of the object 
+ *                 or a default value if the object is empty.
+ *                 Optional is primarily intended for use as a method return type where there is a clear need to represent "no result," 
+ *                 and where using null is likely to cause errors.
+ *                 
  */
 
 public interface StudentDao {

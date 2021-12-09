@@ -15,14 +15,13 @@ import org.springframework.stereotype.Service;
  * 
  * - This is the service layer, which is responsible for business logic. 
  * 
- * - The student service should be a spring bean, which mean this class should
- * be instantiated
+ * - The student service should be a spring bean, which mean this class should be instantiated
  * 
- * @Autowired// This student service should be auto wired for us, so studentDao
- *              will be instantiated for us and then inject into the constructor
- *              and method 
- * @Service // Add this notation to let the studentDao
- *              class to find this class
+ * @Autowired  This student service should be auto wired for us, 
+ *              so studentDao will be instantiated for us and then inject into the constructor and method 
+ * @Service   Add this notation to let the studentDao class to find this class
+ * 
+ * @Qualifier  is used to resolve the autowiring conflict, when there are multiple beans of same type. 
  * 
  */
 

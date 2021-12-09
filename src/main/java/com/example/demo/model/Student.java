@@ -1,7 +1,7 @@
 package com.example.demo.model;
 
 import java.util.UUID;
-
+// UUID: A UUID represents a 128-bit value. It is used for for creating random file names, session id in web application, transaction id etc
 
 // Student class: student data store in the database
 public class Student {

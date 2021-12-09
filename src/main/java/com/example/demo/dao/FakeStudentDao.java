@@ -28,7 +28,7 @@ public class FakeStudentDao implements StudentDao {
 		return 1;
 
 	}
-
+	@Override
 	public List<Student> selectAllStudents() {
 
 		return Database;
@@ -60,7 +60,7 @@ public class FakeStudentDao implements StudentDao {
 		Database.set(indexToUpdate, student);
 		return 1; // successful update the student name return 1 otherwise return -1
 	}
-
+	@Override
 	public Optional<Student> selectStudentById(UUID id) {
 		
 		// Use a for loop to find the student id

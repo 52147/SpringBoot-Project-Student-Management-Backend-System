@@ -8,11 +8,17 @@ package com.example.demo.controller;
  *  - implement an api that get json object back.  
  *  
  *    
- *  @RestController // The notation make this class to serve the restful endpoints
- *	@Autowired // add the service notation in the studentService class 
- *                to tell this controller where to find the student service
- *                
- *                
+ *  @RestController  The notation make this class to serve the restful endpoints
+ *  
+ *	@Autowired 
+ *  - It allows Spring to resolve and inject collaborating beans into our bean.
+ *  - After enabling annotation injection, we can use autowiring on properties, setters, and constructors.              
+ *  - @Autowired on a constructor.
+ *  
+ *    ex:
+ *    - public StudentController(StudentService studentService)
+ *    - We'll see that an instance of StudentController is injected by Spring as an argument to the StudentService constructor:             
+ *  
  *  Postman: is an application used for API testing. It is an HTTP client that tests HTTP requests.              
  *
  */
